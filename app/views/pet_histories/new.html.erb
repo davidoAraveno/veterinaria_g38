@@ -1,0 +1,7 @@
+<%= form_with(url: phc_path, model: @pet_history, local: true) do |f| %>
+    <%= f.select :pet_id, options_from_collection_for_select(@pets, :id, :name)%>
+    <%= f.number_field :weight, placeholder: 'peso' %>
+    <%= f.number_field :height, placeholder: 'altura' %>
+    <%= f.text_field :diagnostic, placeholder: 'diagnostico' %>
+    <%= f.submit 'guardar' %>
+<% end %>

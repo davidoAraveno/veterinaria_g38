@@ -1,0 +1,11 @@
+<h2> Lista de mascotas </h2>
+
+<% @pets.each do |i| %>
+    <ul>
+        <li> nombre: <%= i.name %> </li>
+        <li> visitas: <%= Pet.find(i.id).pet_histories.count %> </li>
+        <li> <%= link_to 'diagnostico', ps_path(id: i.id) %> </li>
+    </ul>
+<% end %>
+
+<%= link_to 'crear diagnostico', phn_path %>

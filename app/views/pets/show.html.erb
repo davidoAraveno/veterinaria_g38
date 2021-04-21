@@ -1,0 +1,18 @@
+<h3> nombre mascota: <%= @pet.name %> </h3>
+
+<br>
+
+<% if @pet.pet_histories.count > 0 %>
+    <p> <% @pet.pet_histories.each do |i| %>
+        <ul>
+            <li> peso <%= i.weight %> </li>
+            <li> altura <%= i.height %> </li>
+            <li> diagnostico <%= i.diagnostic %> </li>
+        </ul>
+        <% end %>
+    </p>
+<% else %>
+    <h2> esta mascota no tiene historia. Hagale una </h2>
+<% end %>
+
+<%= link_to 'volver al inicio', root_path %>
